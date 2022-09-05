@@ -6,6 +6,7 @@ import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
 
 
+
 function App() {
 
   let [galleryArray, setGalleryArray] = useState([]);
@@ -34,7 +35,8 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         {/* Pass props related to like button inside the <GalleryList/> call */}
-        <GalleryList galleryArray={galleryArray}/>
+        <GalleryList galleryArray={galleryArray} />
+        
         
 
         

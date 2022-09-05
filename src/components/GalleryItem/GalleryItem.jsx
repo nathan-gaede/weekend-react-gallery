@@ -9,13 +9,16 @@ import './GalleryList.css';
 //replaces li in gallerylist.jsx
 //<GalleryItem key={item.id} item={item}/>
 
-function galleryPhoto () {
+function GalleryItem({item}) {
     return(
-        <div>
-            
-        </div>
+        
+            <ul>
+            {/* //take <li></li> below and use it for galleryitem.jsx */}
+                  <li key={item.id}>id: {item.id} description: {item.description}
+                      <img className="Image-main"src={item.path}/>
+                  </li>
+            </ul>
+        )
+    }
 
-    );
-}
-
-export default galleryPhoto;
+export default GalleryItem;
