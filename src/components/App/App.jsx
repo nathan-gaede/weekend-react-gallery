@@ -37,9 +37,6 @@ function App() {
         {/* Pass props related to like button inside the <GalleryList/> call */}
         <GalleryList galleryArray={galleryArray} />
         
-        
-
-        
       </div>
     );
 }

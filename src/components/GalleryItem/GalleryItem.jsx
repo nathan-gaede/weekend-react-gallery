@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 
 //using {item} to bring in gallery data
@@ -10,15 +11,26 @@ import React from 'react';
 //<GalleryItem key={item.id} item={item}/>
 
 function GalleryItem({item}) {
+    const [toggle, setToggle] = useState( false );
     return(
-        
-            
+ 
             // {/* //take <li></li> below and use it for galleryitem.jsx */}
-                  <li key={item.id}>id: {item.id} description: {item.description}
-                      <img className="Image-main"src={item.path}/>
-                  </li>
-            
+                  <li key={item.id}>
+                      {/* <img className="Image-main"src={item.path}/> */}
+                  <br />
+                  <br />
+                  <button onClick= {() => setToggle(!toggle)}>Toggle</button>
+                  <br />
+                  <br />
+                  {item.id} {toggle ? (
+                    <span>{item.description}</span>
+                ): (
+                    <span><img className="Image-main"src={item.path}/></span>
+                )}
+                </li>
         );
     }
+       
+    
 
 export default GalleryItem;
