@@ -1,5 +1,5 @@
 import React from 'react';
-import './GalleryList.css';
+
 
 //using {item} to bring in gallery data
 //export out 
@@ -12,13 +12,13 @@ import './GalleryList.css';
 function GalleryItem({item}) {
     return(
         
-            <ul>
-            {/* //take <li></li> below and use it for galleryitem.jsx */}
+            
+            // {/* //take <li></li> below and use it for galleryitem.jsx */}
                   <li key={item.id}>id: {item.id} description: {item.description}
                       <img className="Image-main"src={item.path}/>
                   </li>
-            </ul>
-        )
+            
+        );
     }
 
 export default GalleryItem;

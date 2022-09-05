@@ -1,19 +1,22 @@
 import React from 'react';
 import './GalleryList.css';
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 
-function galleryList({galleryArray}) {
+function GalleryList({galleryArray}) {
     return(
         <ul>
         {
           galleryArray.map(item => {
-            return(
+            
                 //take <li></li> below and use it for galleryitem.jsx
             //   
-            <div>
+            // <li key={item.id}>id: {item.id} description: {item.description}
+            //           <img className="Image-main"src={item.path}/>
+            //       </li>
                 <GalleryItem key={item.id} item={item} />
-            </div>
-            )
+            
+            
           })
 
         }
@@ -23,4 +26,4 @@ function galleryList({galleryArray}) {
     )
 }
 
-export default galleryList;
+export default GalleryList;
