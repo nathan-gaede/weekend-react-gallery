@@ -4,19 +4,18 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 
 
 
-function GalleryList({galleryArray}) {
+function GalleryList({galleryArray, updateLikes}) {
        
     return(
-        
         
         <ul>
         {
           galleryArray.map(item => {
-            
+         
             //take <li></li> below and use it for galleryitem.jsx  
             // <li key={item.id}>id: {item.id} description: {item.description}
             // <img className="Image-main"src={item.path}/></li>      
-               return <GalleryItem key={item.id} item={item} />
+               return <GalleryItem key={item.id} item={item} updateLikes={updateLikes}/>
                
           })
           

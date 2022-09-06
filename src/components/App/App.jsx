@@ -4,6 +4,8 @@ import axios from 'axios';
 //After refactoring list into GalleryList.jsx
 //uncomment below import
 import GalleryList from '../GalleryList/GalleryList';
+// import GalleryItem from '../GalleryItem/GalleryItem';
+
 
 
 
@@ -14,6 +16,7 @@ function App() {
   useEffect(() => {
     console.log('useEffect active');
     fetchImages();
+    
   },[]);
 
   const fetchImages = () => {
@@ -28,6 +31,19 @@ function App() {
     });
   }
 
+  const updateLikes = (tomato) => {
+    axios({
+      method: 'PUT',
+      url: `gallery/like/${tomato}`,
+    }).then(response => {
+      fetchImages();
+      
+    }).catch(error => {
+      console.log(error);
+      alert('Something wrong with PUT');
+    });
+  }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -35,7 +51,7 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         {/* Pass props related to like button inside the <GalleryList/> call */}
-        <GalleryList galleryArray={galleryArray} />
+        <GalleryList galleryArray={galleryArray} updateLikes={updateLikes} />
         
       </div>
     );

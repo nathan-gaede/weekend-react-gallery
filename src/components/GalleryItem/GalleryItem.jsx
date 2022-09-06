@@ -10,8 +10,9 @@ import { useState } from 'react';
 //replaces li in gallerylist.jsx
 //<GalleryItem key={item.id} item={item}/>
 
-function GalleryItem({item}) {
+function GalleryItem({item, updateLikes}) {
     const [toggle, setToggle] = useState( false );
+    
     return(
  
             // {/* //take <li></li> below and use it for galleryitem.jsx */}
@@ -20,8 +21,11 @@ function GalleryItem({item}) {
                   <br />
                   <br />
                   <button onClick= {() => setToggle(!toggle)}>Toggle</button>
+                  <button onClick= {() => updateLikes(item.id)}>Like</button>
+                  number of likes: ({item.likes})
                   <br />
                   <br />
+                  
                   {item.id} {toggle ? (
                     <span>{item.description}</span>
                 ): (
