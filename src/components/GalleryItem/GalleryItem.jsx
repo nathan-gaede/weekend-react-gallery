@@ -21,6 +21,8 @@ function GalleryItem({item, updateLikes}) {
                   <br />
                   <br />
                   <button onClick= {() => setToggle(!toggle)}>Toggle</button>
+                  {/* Step 1 */}
+                  {/* <button onClick= {() => console.log(item.id)}>Like</button> */}
                   <button onClick= {() => updateLikes(item.id)}>Like</button>
                   number of likes: ({item.likes})
                   <br />

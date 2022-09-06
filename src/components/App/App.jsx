@@ -32,6 +32,7 @@ function App() {
   }
 
   const updateLikes = (tomato) => {
+    console.log('updateLikes', tomato); // testing that we have an id
     axios({
       method: 'PUT',
       url: `gallery/like/${tomato}`,
